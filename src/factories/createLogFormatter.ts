@@ -18,6 +18,7 @@ export const createLogFormatter = (configuration: LogFormatterConfigurationType)
   const {
     chalk,
     includeDate,
+    outputFormat,
   } = configuration;
 
   const logLevelColorMap = {
@@ -68,7 +69,7 @@ export const createLogFormatter = (configuration: LogFormatterConfigurationType)
 
     formattedMessage += ': ' + message.message + '\n';
 
-    if (message.context) {
+    if (message.context && outputFormat === 'pretty') {
       /* eslint-disable @typescript-eslint/no-unused-vars */
       const {
         application: temporary0,

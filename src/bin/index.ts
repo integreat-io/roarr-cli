@@ -65,6 +65,7 @@ const argv = yargs
     'output-format': {
       choices: [
         'pretty',
+        'line',
         'json',
       ],
       default: 'pretty',
@@ -149,7 +150,7 @@ if (argv.filter || filterFunction) {
   }));
 }
 
-if (argv['output-format'] === 'pretty') {
+if (argv['output-format'] === 'pretty' || argv['output-format'] === 'line') {
   stream = stream.pipe(createLogFormatter({
     chalk,
     includeDate: argv['include-date'],

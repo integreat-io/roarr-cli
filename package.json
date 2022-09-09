@@ -16,7 +16,7 @@
     ]
   },
   "bin": {
-    "roarr": "dist/src/bin/index.js"
+    "rrr": "dist/src/bin/index.js"
   },
   "dependencies": {
     "chalk": "^4.0.0",

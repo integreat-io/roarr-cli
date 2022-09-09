@@ -8,13 +8,13 @@
 
 Roarr CLI program provides ability to filter and pretty-print [Roarr](https://github.com/gajus/roarr) logs.
 
-* [Usage](#usage)
-  * [Viewing logs in browser](#viewing-logs-in-browser)
-    * [Identifying Log Source](#identifying-log-source)
-  * [Filtering logs](#filtering-logs)
-  * [Formatting logs](#formatting-logs)
-* [Roarr configuration file](#roarr-configuration-file)
-  * [Supported Roarr configuration file properties](#supported-roarr-configuration-file-properties)
+- [Usage](#usage)
+  - [Viewing logs in browser](#viewing-logs-in-browser)
+    - [Identifying Log Source](#identifying-log-source)
+  - [Filtering logs](#filtering-logs)
+  - [Formatting logs](#formatting-logs)
+- [Roarr configuration file](#roarr-configuration-file)
+  - [Supported Roarr configuration file properties](#supported-roarr-configuration-file-properties)
 
 ## Usage
 
@@ -33,7 +33,8 @@ Options:
                              match.                        [number] [default: 0]
   --lag                      When filtering, print a number of lines trailing
                              the match.                    [number] [default: 0]
-  --output-format                [choices: "pretty", "json"] [default: "pretty"]
+  --output-format            [choices: "pretty", "line", "json"]
+                                                             [default: "pretty"]
   --use-colors               Toggle use of colors in the output.
                                                        [boolean] [default: true]
   --help                     Show help                                 [boolean]
@@ -117,8 +118,8 @@ Provided that the `index.js` program produced an output such as:
 
 ![CLI output demo](./.README/cli-output-demo.png)
 
-* `@` prefixed value denotes the name of the package.
-* `#` prefixed value denotes the namespace.
+- `@` prefixed value denotes the name of the package.
+- `#` prefixed value denotes the namespace.
 
 The "pretty" format relies on logs using the context property names suggested in the [conventions](#conventions).
 
@@ -138,6 +139,6 @@ module.exports = {
 
 ### Supported Roarr configuration file properties
 
-|Property name|Description|
-|---|---|
-|`filterFunction`|A function that receives Roarr message object and returns a boolean property that determines if the log should be filtered out (`false`) or included (`true`).|
+| Property name    | Description                                                                                                                                                    |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `filterFunction` | A function that receives Roarr message object and returns a boolean property that determines if the log should be filtered out (`false`) or included (`true`). |
